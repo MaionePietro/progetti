@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
   key = '9a256128f2924f76a792c54296827720'
   constructor(private http:HttpClient) {}
