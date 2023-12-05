@@ -1,0 +1,10 @@
+<mat-drawer-container  class="example-container" > 
+  <mat-drawer  mode="side" aperto>
+    <h1>ciao</h1>  
+  </mat-drawer > 
+  <mat-drawer-content >
+    <div *ngFor="let game of dataGames;">
+      <app-card [game]="game"></app-card>
+    </div>
+  </mat-drawer-content > 
+</mat-drawer-container>
