@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { MatInputModule } from '@angular/material/input'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,14 @@ import { FormsModule } from '@angular/forms';
     MatSidenavModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    //library.addIcons(faFilm);
+  }
+ }

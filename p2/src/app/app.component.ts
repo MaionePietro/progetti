@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
 import { catchError, map, of } from 'rxjs';
+//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCoffee, } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ import { catchError, map, of } from 'rxjs';
 export class AppComponent implements OnInit {
   dataGames: any =[]
   serchGame = ''
+  faCoffee = faCoffee;
   constructor(private apiService: ApiService){}
 
   ngOnInit(){
