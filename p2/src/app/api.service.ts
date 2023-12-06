@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs'; //consultare documentazione 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +9,13 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
   key = '9a256128f2924f76a792c54296827720'
   constructor(private http:HttpClient) {}
-  public apriUrl='https://api.rawg.io/api/games?key=9a256128f2924f76a792c54296827720&dates=2019-09-01,2019-09-30&platforms=18,1,7'
+  public apriUrl='https://api.rawg.io/api/games?key=9a256128f2924f76a792c54296827720'
 
   getDati(): Observable<any>{
     return this.http.get<any>(this.apriUrl)
+  }
+  getGameName(serchGame:string): Observable<any>{
+    const params = new HttpParams().set('serch', serchGame)
+    return this.http.get<any>(`${this.apriUrl}`, {params})
   }
 }

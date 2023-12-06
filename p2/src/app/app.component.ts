@@ -9,14 +9,28 @@ import { catchError, map, of } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   dataGames: any =[]
-
+  serchGame = ''
   constructor(private apiService: ApiService){}
 
   ngOnInit(){
+    this.getDati()
+  }
+
+  getDati(){
     this.apiService.getDati().pipe(
       map (result =>{
         this.dataGames = result.results
-        console.log(this.dataGames)
+      }),
+      catchError(error => {
+        console.error(error);
+        return of(error)
+      })
+    ).subscribe()
+  }
+  getGameName(){
+    this.apiService.getGameName(this.serchGame).pipe(
+      map (result =>{
+        this.dataGames = result.results
       }),
       catchError(error => {
         console.error(error);
