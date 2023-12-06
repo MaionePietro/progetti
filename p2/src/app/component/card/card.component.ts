@@ -10,7 +10,7 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.game)
+    // console.log(this.game)
   }
 
 }

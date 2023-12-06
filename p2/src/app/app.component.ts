@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
     ).subscribe()
   }
   getGameName(){
+    console.log("ciao")
     this.apiService.getGameName(this.serchGame).pipe(
       map (result =>{
         this.dataGames = result.results
