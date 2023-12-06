@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs'; //consultare documentazione 
+import { Observable, of } from 'rxjs'; //consultare documentazione
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
@@ -15,7 +15,13 @@ export class ApiService {
     return this.http.get<any>(this.apriUrl)
   }
   getGameName(serchGame:string): Observable<any>{
-    const params = new HttpParams().set('serch', serchGame)
+    const params = new HttpParams().set('search', serchGame)
+    // console.log(serchGame)
+    return this.http.get<any>(`${this.apriUrl}`, {params})
+  }
+  getGameConsole(serchGame:string): Observable<any>{
+    const params = new HttpParams().set('search', serchGame)
+    // console.log(serchGame)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
 }
