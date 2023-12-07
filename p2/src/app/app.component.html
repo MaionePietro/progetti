@@ -1,8 +1,8 @@
-<mat-drawer-container  class="example-container" >
+<mat-drawer-container  class="example-container h-screen">
   <mat-drawer  mode="side" opened>
       <app-search-bar (mandaDatiEvento)="getGameName($event)"></app-search-bar>
   </mat-drawer >
-  <mat-drawer-content>
+  <mat-drawer-content class="background_custom">
     <div class="flex flex-wrap justify-center">
       <div class="m-8" *ngFor="let game of dataGames;">
         <app-card [game]="game"></app-card>

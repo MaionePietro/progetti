@@ -16,12 +16,10 @@ export class ApiService {
   }
   getGameName(serchGame:string): Observable<any>{
     const params = new HttpParams().set('search', serchGame)
-    // console.log(serchGame)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
   getGameConsole(serchGame:string): Observable<any>{
     const params = new HttpParams().set('search', serchGame)
-    // console.log(serchGame)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
 }

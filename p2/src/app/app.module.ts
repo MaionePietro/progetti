@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
 import { SearchBarComponent } from './component/search-bar/search-bar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
