@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
 import { catchError, map, of } from 'rxjs';
-//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee, faFaucet  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -12,11 +11,13 @@ import { faCoffee, faFaucet  } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent implements OnInit {
   dataGames: any =[]
   serchGame = ''
+  page : number = 1
   faCoffee = faCoffee;
   constructor(private apiService: ApiService){}
 
   ngOnInit(){
     this.getDati()
+    this.page = 1
   }
 
   getDati(){
@@ -34,6 +35,19 @@ export class AppComponent implements OnInit {
   getGameName(value: string){
     console.log(value)
     this.apiService.getGameName(value).pipe(
+      map (result =>{
+        this.dataGames = result.results
+        console.log(result.results)
+      }),
+      catchError(error => {
+        console.error(error);
+        return of(error)
+      })
+    ).subscribe()
+  }
+  
+  getGamePages(){
+    this.apiService.getGamePages(this.page).pipe(
       map (result =>{
         this.dataGames = result.results
         console.log(result.results)

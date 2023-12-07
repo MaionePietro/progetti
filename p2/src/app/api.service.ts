@@ -22,4 +22,8 @@ export class ApiService {
     const params = new HttpParams().set('search', serchGame)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
+  getGamePages(page:number): Observable<any>{
+    const params = new HttpParams().set('page', page)
+    return this.http.get<any>(`${this.apriUrl}`, {params})
+  }
 }

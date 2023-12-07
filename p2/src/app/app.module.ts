@@ -11,13 +11,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
 import { SearchBarComponent } from './component/search-bar/search-bar.component';
+import { PaginatorComponent } from './component/paginator/paginator.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,

@@ -2,11 +2,15 @@
   <mat-drawer  mode="side" opened>
       <app-search-bar (mandaDatiEvento)="getGameName($event)"></app-search-bar>
   </mat-drawer >
-  <mat-drawer-content class="background_custom">
+  <mat-drawer-content class="background_custom relative">
+
+    <app-paginator [page]="page" class="fixed right-11 bottom-10"></app-paginator>
+
     <div class="flex flex-wrap justify-center">
       <div class="m-8" *ngFor="let game of dataGames;">
         <app-card [game]="game"></app-card>
       </div>
     </div>
+
   </mat-drawer-content >
 </mat-drawer-container>
