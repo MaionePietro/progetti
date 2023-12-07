@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
 import { catchError, map, of } from 'rxjs';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCoffee, } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faFaucet  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -30,9 +30,10 @@ export class AppComponent implements OnInit {
       })
     ).subscribe()
   }
-  getGameName(){
-    // console.log(this.serchGame)
-    this.apiService.getGameName(this.serchGame).pipe(
+  
+  getGameName(value: string){
+    console.log(value)
+    this.apiService.getGameName(value).pipe(
       map (result =>{
         this.dataGames = result.results
         console.log(result.results)
