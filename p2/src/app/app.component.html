@@ -1,10 +1,10 @@
 <mat-drawer-container  class="example-container h-screen">
-  <mat-drawer  mode="side" opened>
+  <mat-drawer mode="side" opened class="">
       <app-search-bar (mandaDatiEvento)="getGameName($event)"></app-search-bar>
   </mat-drawer >
   <mat-drawer-content class="background_custom relative">
 
-    <app-paginator [page]="page" class="fixed right-11 bottom-10"></app-paginator>
+    <app-paginator [page]="page" class="fixed right-11 bottom-10" (postPageEvent)="getGamePages($event)"></app-paginator>
 
     <div class="flex flex-wrap justify-center">
       <div class="m-8" *ngFor="let game of dataGames;">

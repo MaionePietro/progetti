@@ -1,11 +1,17 @@
 .container_custom{
-    background-color: red;
+    background: linear-gradient(60deg, #006, #402);
+    opacity: 0.8;
     width: 70px;
     height: 70px;
     border-radius: 100%;
     display: flex;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     color: white;
-    
+    font-weight: bold;
+    font-size: large;
+}
+.container_custom > *{
+    opacity: none;
 }

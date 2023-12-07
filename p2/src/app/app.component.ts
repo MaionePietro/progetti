@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.getDati()
     this.page = 1
+    this.getGamePages(2)
   }
 
   getDati(){
@@ -45,9 +46,10 @@ export class AppComponent implements OnInit {
       })
     ).subscribe()
   }
-  
-  getGamePages(){
-    this.apiService.getGamePages(this.page).pipe(
+
+  getGamePages(page: number){
+    console.log(page)
+    this.apiService.getGamePages(page).pipe(
       map (result =>{
         this.dataGames = result.results
         console.log(result.results)
