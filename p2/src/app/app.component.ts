@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
 import { catchError, map, of } from 'rxjs';
-import { faCoffee, faFaucet  } from '@fortawesome/free-solid-svg-icons';
+//import { faCoffee, faFaucet  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +10,8 @@ import { faCoffee, faFaucet  } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppComponent implements OnInit {
   dataGames: any =[]
-  serchGame = ''
   page : number = 1
-  faCoffee = faCoffee;
+  arrayCart: Array<number> = []
   constructor(private apiService: ApiService){}
 
   ngOnInit(){
@@ -46,7 +45,6 @@ export class AppComponent implements OnInit {
       })
     ).subscribe()
   }
-
   getGamePages(page: number){
     console.log(page)
     this.apiService.getGamePages(page).pipe(
@@ -59,5 +57,8 @@ export class AppComponent implements OnInit {
         return of(error)
       })
     ).subscribe()
+  }
+  pushArrayCart(product: number){
+    this.arrayCart.push(product)    
   }
 }

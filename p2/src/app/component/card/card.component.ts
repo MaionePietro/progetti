@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import{ Input } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import{ Input, Output } from '@angular/core';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -7,10 +7,15 @@ import{ Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input() game: any;
+  @Output() addCartEvent = new EventEmitter<number>()
+
+
   constructor() { }
 
   ngOnInit(): void {
-     console.log(this.game)
+  }
+  addCart(){
+    this.addCartEvent.emit(this.game.id)
   }
 
 }

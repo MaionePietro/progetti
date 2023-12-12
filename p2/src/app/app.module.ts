@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
 import { SearchBarComponent } from './component/search-bar/search-bar.component';
 import { PaginatorComponent } from './component/paginator/paginator.component';
+import { CartComponent } from './view/cart/cart.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PaginatorComponent } from './component/paginator/paginator.component';
     AppComponent,
     CardComponent,
     SearchBarComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
