@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
     this.getDati()
     this.page = 1
     this.getGamePages(2)
+    this.baseDataCart()
   }
 
   getDati(){
@@ -58,7 +59,15 @@ export class AppComponent implements OnInit {
       })
     ).subscribe()
   }
-  pushArrayCart(product: number){
-    this.arrayCart.push(product)    
+  pushArrayCart(product: number){ 
+    if (!this.arrayCart.includes(product)) {
+      this.arrayCart.push(product)
+      let arrayCartJson = JSON.stringify(this.arrayCart);
+      localStorage.setItem("arrayCartJson", arrayCartJson);
+    }   
+  }
+  baseDataCart(){
+    let arrayCartJson: any = localStorage.getItem("arrayCartJson");
+    this.arrayCart = JSON.parse(arrayCartJson);
   }
 }
