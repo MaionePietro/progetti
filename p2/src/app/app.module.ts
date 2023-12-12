@@ -13,6 +13,7 @@ import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawes
 import { SearchBarComponent } from './component/search-bar/search-bar.component';
 import { PaginatorComponent } from './component/paginator/paginator.component';
 import { CartComponent } from './view/cart/cart.component';
+import { NavButtonComponent } from './component/nav-button/nav-button.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CartComponent } from './view/cart/cart.component';
     CardComponent,
     SearchBarComponent,
     PaginatorComponent,
-    CartComponent
+    CartComponent,
+    NavButtonComponent
   ],
   imports: [
     BrowserModule,
