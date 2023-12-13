@@ -7,26 +7,28 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 
 export class ApiService {
-  key = '9a256128f2924f76a792c54296827720'
+  public key = '9a256128f2924f76a792c54296827720'
   constructor(private http:HttpClient) {}
-  public apriUrl='https://api.rawg.io/api/games?key=9a256128f2924f76a792c54296827720'
+  public apriUrl='https://api.rawg.io/api/games'
 
   getDati(): Observable<any>{
-    return this.http.get<any>(this.apriUrl)
+    const params = new HttpParams().set('key', this.key)
+    return this.http.get<any>(`${this.apriUrl}`, {params})
   }
   getGameName(serchGame:string): Observable<any>{
-    const params = new HttpParams().set('search', serchGame)
+    const params = new HttpParams().set('search', serchGame).set('key', this.key)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
   getGameConsole(serchGame:string): Observable<any>{
-    const params = new HttpParams().set('search', serchGame)
+    const params = new HttpParams().set('search', serchGame).set('key', this.key)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
   getGamePages(page:number): Observable<any>{
-    const params = new HttpParams().set('page', page)
+    const params = new HttpParams().set('page', page).set('key', this.key)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
-  // getGameCart(): Observable<any> {
-
-  // }
+  getProductGame(productIdCart:number): Observable<any> {
+    const params = new HttpParams().append("/",productIdCart).set('key', this.key)
+    return this.http.get<any>(`${this.apriUrl}`, {params})
+  }
 }

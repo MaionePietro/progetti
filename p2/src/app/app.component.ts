@@ -49,7 +49,6 @@ export class AppComponent implements OnInit {
     this.apiService.getGamePages(page).pipe(
       map (result =>{
         this.dataGames = result.results
-        console.log(result.results)
       }),
       catchError(error => {
         console.error(error);
