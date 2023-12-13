@@ -26,4 +26,7 @@ export class ApiService {
     const params = new HttpParams().set('page', page)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
+  // getGameCart(): Observable<any> {
+
+  // }
 }
