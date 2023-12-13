@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   dataGames: any =[]
   page : number = 1
   arrayCart: Array<number> = []
+  mostraComponente1: boolean = true;
   constructor(private apiService: ApiService){}
 
   ngOnInit(){
@@ -65,6 +66,6 @@ export class AppComponent implements OnInit {
   }
   baseDataCart(){
     let arrayCartJson: any = localStorage.getItem("arrayCartJson");
-    this.arrayCart = JSON.parse(arrayCartJson);
+    this.arrayCart = arrayCartJson ? JSON.parse(arrayCartJson) : [];
   }
 }

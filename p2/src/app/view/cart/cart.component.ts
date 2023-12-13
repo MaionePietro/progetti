@@ -21,7 +21,6 @@ export class CartComponent implements OnInit {
         map((result) => {
           this.productCard = result.results;
           console.log("🚀 ~ file: cart.component.ts:23 ~ CartComponent ~ map ~ productCard:", this.productCard)
-          
         }),
         catchError((error) => {
           console.error(error);
