@@ -17,5 +17,4 @@ export class CardComponent implements OnInit {
   addCart(){
     this.addCartEvent.emit(this.game.id)
   }
-
 }
