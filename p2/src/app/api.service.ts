@@ -15,12 +15,12 @@ export class ApiService {
     const params = new HttpParams().set('key', this.key)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
-  getGameName(serchGame:string): Observable<any>{
-    const params = new HttpParams().set('search', serchGame).set('key', this.key)
+  getGameName(searchGame:string): Observable<any>{
+    const params = new HttpParams().set('search', searchGame).set('key', this.key)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
-  getGameConsole(serchGame:string): Observable<any>{
-    const params = new HttpParams().set('search', serchGame).set('key', this.key)
+  getGameConsole(searchGame:string): Observable<any>{
+    const params = new HttpParams().set('search', searchGame).set('key', this.key)
     return this.http.get<any>(`${this.apriUrl}`, {params})
   }
   getGamePages(page:number): Observable<any>{

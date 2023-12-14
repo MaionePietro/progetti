@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import{ Input, Output } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
