@@ -14,6 +14,7 @@ import { SearchBarComponent } from './component/search-bar/search-bar.component'
 import { PaginatorComponent } from './component/paginator/paginator.component';
 import { CartComponent } from './view/cart/cart.component';
 import { NavButtonComponent } from './component/nav-button/nav-button.component';
+import { PopupComponent } from './matirialComponent/popup/popup.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NavButtonComponent } from './component/nav-button/nav-button.component'
     SearchBarComponent,
     PaginatorComponent,
     CartComponent,
-    NavButtonComponent
+    NavButtonComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
