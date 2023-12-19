@@ -15,6 +15,7 @@ import { PaginatorComponent } from './component/paginator/paginator.component';
 import { CartComponent } from './view/cart/cart.component';
 import { NavButtonComponent } from './component/nav-button/nav-button.component';
 import { PopupComponent } from './matirialComponent/popup/popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PopupComponent } from './matirialComponent/popup/popup.component';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
